@@ -1,0 +1,3 @@
+[submodule "BRFApp"]
+	path = BRFApp
+	url = git@github.com:CIVIS-project/BRFApp.git

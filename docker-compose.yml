@@ -1,0 +1,29 @@
+version: "3"
+services:
+  web:
+    container_name: brf-energi-web
+    build: "./BRFApp/"
+    volumes:
+      - "./BRFApp:/code/"
+    ports:
+      - "9229:9229"
+    env_file: web.env
+    links:
+      - mongo
+
+  mongo:
+    container_name: brf-energi-mongo
+    image: "mongo:3.4.6"
+    ports:
+      - "27017:27017"
+    volumes:
+      - "./data:/data/"
+
+  nginx:
+    container_name: brf-energi-nginx
+    restart: always
+    build: "./nginx/"
+    ports:
+      - "3000:80"
+    links:
+      - web
