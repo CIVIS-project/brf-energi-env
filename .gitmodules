@@ -1,3 +1,6 @@
 [submodule "BRFApp"]
 	path = BRFApp
 	url = git@github.com:CIVIS-project/BRFApp.git
+[submodule "NodeBB"]
+	path = NodeBB
+	url = git@github.com:NodeBB/NodeBB.git
