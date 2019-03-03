@@ -7,17 +7,38 @@ services:
       - "./BRFApp:/code/"
     ports:
       - "9229:9229"
-    env_file: web.env
+    env_file: .env
+    environment:
+      PORT: 3000
     links:
       - mongo
+
+  forum:
+    container_name: brf-energi-forum
+    build: "./NodeBB/"
+    volumes:
+      - "./NodeBB:/usr/src/app"
+    environment:
+      PORT: 4567
+    links:
+      - mongo
+      - redis
 
   mongo:
     container_name: brf-energi-mongo
     image: "mongo:3.4.6"
+    expose:
+      - "27017"
     ports:
       - "27017:27017"
     volumes:
       - "./data:/data/"
+
+  redis:
+    container_name: brf-energi-redis
+    image: "redis:5.0.2"
+    expose:
+      - "6379"
 
   nginx:
     container_name: brf-energi-nginx
@@ -27,3 +48,4 @@ services:
       - "3000:80"
     links:
       - web
+      - forum

@@ -1,0 +1,16 @@
+{
+  "url": "http://localhost:3000/forum",
+  "secret": "SECRET",
+  "database": "mongo",
+  "mongo": {
+      "host": "mongo",
+      "port": "27017",
+      "database": "nodebb"
+  },
+  "oauth":{
+      "id": "METRY_CLIENT_ID",
+      "secret": "METRY_CLIENT_SECRET"
+  },
+  "URL_ENCRYPTION_KEY": "URL_ENCRYPTION_KEY",
+  "BRFENERGI_SESSION_SECRET": "BRFENERGI_SESSION_SECRET"
+}
