@@ -6,7 +6,7 @@
 The project is made up of submodules which are hosted as seperate repositories.
 
 ```bash
-$ git clone git@github.com:CIVIS-project/brf-env.git
+$ git clone git@github.com:CIVIS-project/brf-energi-env.git
 $ cd brf-env
 $ git submodule init
 ```
